@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/keyboardContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <com.zhao.keyboard.view.NumberKeyboardView
+            android:id="@+id/keyboardview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:keyBackground="@drawable/selector_keyboard_key"
+            android:keyPreviewOffset="0dp"
+            android:keyTextColor="#333333"
+            android:keyTextSize="28sp"
+            android:labelTextSize="20sp"
+            android:shadowColor="#eeeeee"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
