@@ -1,2 +1,2 @@
 # 效果图
-![image](https://github.com/zd-storehouse/KeyboardDemo/blob/master/rendering_show.jpg)
+![image](https://github.com/zd-storehouse/KeyboardDemo/blob/master/rendering.jpg)
