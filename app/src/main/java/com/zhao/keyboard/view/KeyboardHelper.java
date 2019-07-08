@@ -1,4 +1,3 @@
-
 package com.zhao.keyboard.view;
 
 import android.animation.Animator;
