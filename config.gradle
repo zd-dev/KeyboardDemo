@@ -2,27 +2,26 @@ ext {
     android = [
             applicationId    : "com.zhao.keyboard",
             minSdkVersion    : 16,
-            compileSdkVersion: 28,
-            targetSdkVersion : 28,
-            buildToolsVersion: '28.0.3',
+            compileSdkVersion: 29,
+            targetSdkVersion : 29,
             versionCode      : 1,
             versionName      : "1.0.0",
     ]
 
     version = [
-            androidSupportSdkVersion: "28.0.0",
-            butterknifeSdkVersion   : "8.8.1",
+            androidSdkVersion: "1.0.0",
+            butterknifeSdkVersion   : "10.0.0",
     ]
 
     dependencies = [
-            "appcompat-v7"             : "com.android.support:appcompat-v7:${version["androidSupportSdkVersion"]}",
-            "design"                   : "com.android.support:design:${version["androidSupportSdkVersion"]}",
-            "support-v4"               : "com.android.support:support-v4:${version["androidSupportSdkVersion"]}",
-            "recyclerview-v7"          : "com.android.support:recyclerview-v7:${version["androidSupportSdkVersion"]}",
+            "appcompat-v7"             : "androidx.appcompat:appcompat:${version["androidSdkVersion"]}",
+            "design"                   : "com.google.android.material:material:${version["androidSdkVersion"]}",
+            "support-v4"               : "androidx.legacy:legacy-support-v4:${version["androidSdkVersion"]}",
+            "recyclerview-v7"          : "androidx.recyclerview:recyclerview:${version["androidSdkVersion"]}",
 
             "butterknife"              : "com.jakewharton:butterknife:${version["butterknifeSdkVersion"]}",
             "butterknife-compiler"     : "com.jakewharton:butterknife-compiler:${version["butterknifeSdkVersion"]}",
 
-            "constraint"               : "com.android.support.constraint:constraint-layout:1.0.2",
+            "constraint"               : 'androidx.constraintlayout:constraintlayout:1.1.3',
     ]
 }
