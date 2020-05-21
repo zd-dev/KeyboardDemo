@@ -2,9 +2,9 @@ package com.zhao.keyboard.ui.adapter;
 
 import android.view.View;
 
+import com.zd.base.BaseRecyclerAdapter;
+import com.zd.base.BaseRecyclerHolder;
 import com.zhao.keyboard.R;
-import com.zhao.keyboard.base.BaseRecyclerAdapter;
-import com.zhao.keyboard.base.BaseRecyclerHolder;
 import com.zhao.keyboard.entity.ContentEntity;
 import com.zhao.keyboard.ui.holder.ContentViewHolder;
 import com.zhao.keyboard.view.KeyboardHelper;

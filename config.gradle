@@ -23,5 +23,6 @@ ext {
             "butterknife-compiler"     : "com.jakewharton:butterknife-compiler:${version["butterknifeSdkVersion"]}",
 
             "constraint"               : 'androidx.constraintlayout:constraintlayout:1.1.3',
+            "base"                     : 'com.github.zd-dev:base:1.0.1',
     ]
 }

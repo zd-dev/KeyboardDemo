@@ -1,11 +1,11 @@
 package com.zhao.keyboard.ui.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.widget.Toast;
 
+import com.zd.base.BaseActivity;
 import com.zhao.keyboard.R;
 import com.zhao.keyboard.entity.ContentEntity;
 import com.zhao.keyboard.ui.adapter.ContentAdapter;
@@ -18,7 +18,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-public class MainActivity extends AppCompatActivity implements KeyboardHelper.OnFinishClickListner {
+public class MainActivity extends BaseActivity implements KeyboardHelper.OnFinishClickListner {
     @BindView(R.id.recycler_view)
     RecyclerView mRecyclerView;
 
@@ -26,16 +26,14 @@ public class MainActivity extends AppCompatActivity implements KeyboardHelper.On
     private Unbinder mUnbinder;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        mUnbinder = ButterKnife.bind(this);
-
-        initDatas();
-        initEvent();
+    protected int initView(Bundle savedInstanceState) {
+        return R.layout.activity_main;
     }
 
-    private void initDatas() {
+    @Override
+    protected void initDatas(Bundle savedInstanceState) {
+        super.initDatas(savedInstanceState);
+        mUnbinder = ButterKnife.bind(this);
         mKeyboardHelper = new KeyboardHelper(this);
 
         List<ContentEntity> data = new ArrayList<>();
@@ -55,7 +53,9 @@ public class MainActivity extends AppCompatActivity implements KeyboardHelper.On
         mContentAdapter.setData(data);
     }
 
-    private void initEvent() {
+    @Override
+    protected void initEvents() {
+        super.initEvents();
         mKeyboardHelper.setFinishClickListner(this);
     }
 
@@ -76,9 +76,9 @@ public class MainActivity extends AppCompatActivity implements KeyboardHelper.On
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (mUnbinder != null && mUnbinder != Unbinder.EMPTY)
+        if (mUnbinder != null && mUnbinder != Unbinder.EMPTY) {
             mUnbinder.unbind();
+        }
         this.mUnbinder = null;
     }
-
 }

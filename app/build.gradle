@@ -32,6 +32,7 @@ dependencies {
     implementation rootProject.ext.dependencies['support-v4']
     implementation rootProject.ext.dependencies['recyclerview-v7']
     implementation rootProject.ext.dependencies['constraint']
+    implementation rootProject.ext.dependencies['base']
     implementation rootProject.ext.dependencies["butterknife"]
     annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
 }

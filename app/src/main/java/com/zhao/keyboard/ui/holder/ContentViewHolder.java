@@ -5,15 +5,13 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 
+import com.zd.base.BaseRecyclerHolder;
 import com.zhao.keyboard.R;
-import com.zhao.keyboard.base.BaseRecyclerHolder;
 import com.zhao.keyboard.entity.ContentEntity;
 import com.zhao.keyboard.view.ContentTextWatcher;
 import com.zhao.keyboard.view.KeyboardHelper;
 
 import java.util.List;
-
-import butterknife.BindView;
 
 /**
  * @author zhaod
@@ -21,10 +19,8 @@ import butterknife.BindView;
  */
 
 public class ContentViewHolder extends BaseRecyclerHolder {
-    @BindView(R.id.ed_content)
-    EditText mEdContent;
-
     private Context mContext;
+    private EditText mEdContent;
     private KeyboardHelper mKeyboardHelper;
 
     public void setKeyboardHelper(KeyboardHelper mKeyboardHelper) {
@@ -34,14 +30,15 @@ public class ContentViewHolder extends BaseRecyclerHolder {
     public ContentViewHolder(View itemView) {
         super(itemView);
         mContext = itemView.getContext();
+        mEdContent = itemView.findViewById(R.id.ed_content);
     }
 
     public void setData(List<ContentEntity> data, int position) {
         ContentEntity contentEntity = data.get(position);
 
         mEdContent.setHint(contentEntity.isShowCustomKeyboard() ?
-                String.format("请输入第%s个内容（自定义键盘）", String.valueOf(position)) :
-                String.format("请输入第%s个内容", String.valueOf(position)));
+          String.format("请输入第%s个内容（自定义键盘）", String.valueOf(position)) :
+          String.format("请输入第%s个内容", String.valueOf(position)));
 
         if (contentEntity.isShowCustomKeyboard()) {
             mKeyboardHelper.setEditText(mEdContent, true);
