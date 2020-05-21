@@ -26,8 +26,13 @@ public class MainActivity extends BaseActivity implements KeyboardHelper.OnFinis
     private Unbinder mUnbinder;
 
     @Override
-    protected int initView(Bundle savedInstanceState) {
+    public int setLayoutId(Bundle savedInstanceState) {
         return R.layout.activity_main;
+    }
+
+    @Override
+    protected void initVisible() {
+        super.initVisible();
     }
 
     @Override
@@ -54,8 +59,8 @@ public class MainActivity extends BaseActivity implements KeyboardHelper.OnFinis
     }
 
     @Override
-    protected void initEvents() {
-        super.initEvents();
+    protected void initEvents(Bundle savedInstanceState) {
+        super.initEvents(savedInstanceState);
         mKeyboardHelper.setFinishClickListner(this);
     }
 
